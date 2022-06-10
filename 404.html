@@ -17,7 +17,7 @@
   <meta name="publisher" content="">
 
   
-  <title>archive</title>
+  <title>Page not found</title>
   
   <link rel="shortcut icon" href="/img/logo.ico">
 
@@ -139,35 +139,35 @@
   </nav>
   <main>
     
-<section class="archive">
-    <h2 class="archives-head">2 post(s) in total.</h2>
-    
-    <div class="post-list-group">
-  
-  
-  
-    
-    <p class="post-list-year">2022</p>
-  
-    <a href="/2022/06/08/cnm/" class="list-group-item transition">
-        <time>06-08</time>
-        <span>cnm</span>
-    </a>
-  
-  
-    <a href="/2022/06/08/hello-world/" class="list-group-item transition">
-        <time>06-08</time>
-        <span>Hello World</span>
-    </a>
-  
+
+<div class="page-404">
+    <h1>Page not found</h1>
+    <h3>We could not find what you were looking for.</h3>
+    <p>Please contact the owner of the site that linked you to the original URL and let them know their link is broken.</p>
+    <p>Will jump to the index page in <span id="page404-time">10</span> seconds</p>
 </div>
 
-    <span id="root-url" style="display: none;">/archives</span>
-    <aside class="pagination">
-    <span class="page-number current">1</span>
-</aside>
+<script>
+    const time = document.getElementById("page404-time");
 
-</section>
+    function redirect() {
+        location.href = "/";
+    }
+
+    function return2index(startTime = 3) {
+        for(let i = 1;i<startTime;i++){
+            setTimeout(()=>{
+                time.innerText = startTime - i;
+            },1000*i);
+        }
+        setTimeout(()=>{
+            redirect();
+        },1000*startTime);
+    }
+
+    return2index(+time.innerText);
+</script>
+
   </main>
   <footer class="foot">
     <p>
